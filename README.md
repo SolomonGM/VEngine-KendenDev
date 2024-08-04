@@ -67,38 +67,38 @@ local module = ModuleBaseConstructor.new()
 module.ModuleName = "Server/Global/Killbricks"
 
 function module:PreInitialize(_: EngineTypes.EngineEnvironmentManager)
-	-- Empty
+    -- Empty
 end
 
 function module:Initialize(_: EngineTypes.EngineEnvironmentManager)
-	print("Obtaining instances...")
-	local bricks = CollectionService:GetTagged("KillBricks")
+    print("Obtaining instances...")
+    local bricks = CollectionService:GetTagged("KillBricks")
 
-	for _, brick in bricks do
-		if brick:IsA("BasePart") then
-			brick.Touched:Connect(function(otherPart: BasePart)
-				local parent = otherPart.Parent :: Instance
-				if not parent:IsA("Model") then
-					return
-				end
-				local player = Players:GetPlayerFromCharacter(parent)
-				if not player then
-					return
-				end
-				local playerCharacter = player.Character
-				if not playerCharacter then
-					return
-				end
-				local playerHumanoid = playerCharacter:FindFirstChildOfClass("Humanoid")
-				if not playerHumanoid then
-					return
-				end
-				playerHumanoid:TakeDamage(playerHumanoid.MaxHealth)
-			end)
-		else
-			error("Incorrectly tagged KillBrick? " .. brick:GetFullName())
-		end
-	end
+    for _, brick in bricks do
+        if brick:IsA("BasePart") then
+            brick.Touched:Connect(function(otherPart: BasePart)
+                local parent = otherPart.Parent :: Instance
+                if not parent:IsA("Model") then
+                    return
+                end
+                local player = Players:GetPlayerFromCharacter(parent)
+                if not player then
+                    return
+                end
+                local playerCharacter = player.Character
+                if not playerCharacter then
+                    return
+                end
+                local playerHumanoid = playerCharacter:FindFirstChildOfClass("Humanoid")
+                if not playerHumanoid then
+                    return
+                end
+                playerHumanoid:TakeDamage(playerHumanoid.MaxHealth)
+            end)
+        else
+            error("Incorrectly tagged KillBrick? " .. brick:GetFullName())
+        end
+    end
 end
 
 return module

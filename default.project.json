@@ -1,0 +1,71 @@
+{
+  "name": "VEngine",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "ThirdPartyShared": {
+        "$path": "Packages"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "EngineRuntime": {
+        "$path": "src/EngineRuntime/Server",
+        "$className": "Actor"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "GameCore": {
+        "$path": "src/Game/Server"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "EngineRuntime": {
+          "$path": "src/EngineRuntime/Client",
+          "$className": "Actor"
+        },
+        "$path": "src/Game/Client_Standalone/PlayerStandalone",
+        "$ignoreUnknownInstances": true
+      },
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$path": "src/Game/Client_Standalone/CharacterStandalone",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst",
+      "EngineRunner": {
+        "$path": "src/EngineRuntime/ReplicatedFirst",
+        "$className": "Actor"
+      },
+      "EngineShared": {
+        "$path": "src/EngineRuntime/Shared"
+      },
+      "Shared": {
+        "$path": "src/Game/Shared"
+      },
+      "ClientCore": {
+        "$path": "src/Game/Client"
+      },
+      "Preinit": {
+        "$path": "src/Game/ReplicatedFirst"
+      },
+      "$ignoreUnknownInstances": true
+    },
+    "SoundService": {
+      "$properties": {
+        "RespectFilteringEnabled": true
+      },
+      "$ignoreUnknownInstances": true
+    }
+  }
+}

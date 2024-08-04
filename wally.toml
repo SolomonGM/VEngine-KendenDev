@@ -1,0 +1,9 @@
+[package]
+name = "dottik/vengine"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Red = "red-blox/red@2.3.0"
+signal = "red-blox/signal@2.0.2"
